@@ -1,27 +1,111 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fancy Form</title>
-
-  <!-- You may add more stuff here -->
-  <link href="style.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Swap</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div class="container">
+    <div class="swap-card">
+      <h1 class="swap-title">Swap</h1>
+      
+      <form id="swap-form" onsubmit="return false">
+        <!-- From Currency Section -->
+        <div class="currency-section">
+          <label class="section-label">You pay</label>
+          <div class="currency-input-wrapper">
+            <div class="currency-selector">
+              <button type="button" class="currency-btn" id="from-currency-btn">
+                <img id="from-currency-icon" src="" alt="" class="currency-icon" />
+                <span id="from-currency-symbol" class="currency-symbol">Select</span>
+                <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="currency-dropdown" id="from-currency-dropdown">
+                <div class="dropdown-search">
+                  <input type="text" id="from-search" placeholder="Search currency..." />
+                </div>
+                <div class="dropdown-list" id="from-currency-list"></div>
+              </div>
+            </div>
+            <div class="amount-input-wrapper">
+              <input 
+                type="number" 
+                id="input-amount" 
+                class="amount-input" 
+                placeholder="0.00"
+                min="0"
+                step="0.00000001"
+              />
+              <span class="balance-text" id="from-balance"></span>
+            </div>
+            <div class="error-message" id="from-error"></div>
+          </div>
+        </div>
 
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <h5>Swap</h5>
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
+        <!-- Swap Button -->
+        <div class="swap-button-wrapper">
+          <button type="button" class="swap-arrow-btn" id="swap-arrow-btn" aria-label="Swap currencies">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M17 14L12 9L7 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
 
-    <label for="output-amount">Amount to receive</label>
-    <input id="output-amount" />
+        <!-- To Currency Section -->
+        <div class="currency-section">
+          <label class="section-label">You receive</label>
+          <div class="currency-input-wrapper">
+            <div class="currency-selector">
+              <button type="button" class="currency-btn" id="to-currency-btn">
+                <img id="to-currency-icon" src="" alt="" class="currency-icon" />
+                <span id="to-currency-symbol" class="currency-symbol">Select</span>
+                <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="currency-dropdown" id="to-currency-dropdown">
+                <div class="dropdown-search">
+                  <input type="text" id="to-search" placeholder="Search currency..." />
+                </div>
+                <div class="dropdown-list" id="to-currency-list"></div>
+              </div>
+            </div>
+            <div class="amount-input-wrapper">
+              <input 
+                type="number" 
+                id="output-amount" 
+                class="amount-input" 
+                placeholder="0.00"
+                min="0"
+                step="0.00000001"
+                readonly
+              />
+              <span class="balance-text" id="to-balance"></span>
+            </div>
+            <div class="error-message" id="to-error"></div>
+          </div>
+        </div>
 
-    <button>CONFIRM SWAP</button>
-  </form>
-  <script src="script.js"></script>
+        <!-- Exchange Rate Info -->
+        <div class="rate-info" id="rate-info"></div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn" id="submit-btn">
+          <span id="submit-text">CONFIRM SWAP</span>
+          <div class="loading-spinner" id="loading-spinner"></div>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
 </body>
 
 </html>

@@ -1,10 +1,10 @@
-# 99Tech Code Challenge #1 #
+## Solutions ##
 
-Note that if you fork this repository, your responses may be publicly linked to this repo.  
-Please submit your application along with the solutions attached or linked.   
+### [Problem 1: Three Ways to Sum to n](./src/problem1)
+Three unique implementations of a summation function using iterative, mathematical, and recursive approaches.
 
-It is important that you minimally attempt the problems, even if you do not arrive at a working solution.
+### [Problem 2: Currency Swap Form](./src/problem2)
+A modern currency swap interface built with vanilla JavaScript and Vite. Features real-time exchange calculations, searchable dropdowns with 500+ cryptocurrencies, and responsive design.
 
-## Submission ##
-You can either provide a link to an online repository, attach the solution in your application, or whichever method you prefer.
-We're cool as long as we can view your solution without any pain.
+### [Problem 3: Code Analysis & Refactoring](./src/problem3)
+TypeScript/React code analysis identifying 11 issues and providing refactored solution with improved performance and type safety.
